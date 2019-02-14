@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+        <h1>Google 2.0</h1>
+        <input type="text" placeholder="Enter Search" id="sr">
+        <button onclick="sr();">Submit</button>
+    </body>
+    <script>
+        function sr() {
+            if(document.getElementById('sr').value.indexOf(" ") > -1) {
+                var res = document.getElementById('sr').value.split(" ");
+                var string = res[0];
+                for(var i = 1; i < res.length; i++) {
+                    string += "+" + res[i];
+                }
+                location.replace('https://www.google.com/search?q=' + string);
+            } else {
+                location.replace('https://www.google.com/search?q=' + document.getElementById('sr').value);
+            }
+        }
+    </script>
+</html>
